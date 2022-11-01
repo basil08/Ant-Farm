@@ -18,25 +18,25 @@ function Login() {
   return (
     <Box>
       <Flex>
-        <Box p="4" pl={8}>
+        <Box p='4' pl="8">
           <Flex>
-            <Center w="50px">
+            <Center w="75px">
               <Image boxSize="40px" objectFit="cover" src="./logo.svg" />
             </Center>
-            <Square size="75px">
-              <Text fontWeight={'bold'}>Ant Farm</Text>
+            <Square size="90px">
+              <Text fontSize={'lg'} fontWeight={'bold'}>Ant Farm</Text>
             </Square>
           </Flex>
           <Box p="2">
             <Text fontWeight={'bold'}>Login</Text>
-            <Text fontSize={'xs'} color={'gray.500'}>
+            <Text color={'gray.500'}>
               A Digital Investment Club &mdash; make money the right way.
             </Text>
           </Box>
 
           <Box p="4">
             <Center>
-              <Button size='xs' border='1px' borderColor={'gray.400'} bg='white'>
+              <Button  border='1px' borderColor={'gray.400'} bg='white'>
                 <Center>
                   <Image boxSize={4} src="./googlelogo.png"></Image>
                   <Text>Sign up with Google</Text>
@@ -48,9 +48,9 @@ function Login() {
           <hr />
 
           <Box p="4">
-            <FormControl size={'sm'}>
+            <FormControl >
               <FormLabel>
-                <Text fontSize={'xs'} color={'gray.500'}>
+                <Text color={'gray.500'}>
                   Email*
                 </Text>
               </FormLabel>
@@ -65,11 +65,11 @@ function Login() {
             <FormControl size={'sm'}>
               <FormLabel>
                 <Flex>
-                  <Text fontSize={'xs'} color={'gray.500'}>
+                  <Text color={'gray.500'}>
                     Password*
                   </Text>
                   <Spacer />
-                  <Text fontSize={'xs'} color="brand.400">
+                  <Text color="brand.400">
                     <Link to="/forgotpassword">Forgot Password?</Link>
                   </Text>
                 </Flex>
@@ -83,15 +83,15 @@ function Login() {
 
             <Box p="2"></Box>
             <Flex>
-              <Text fontSize={'xs'} color={'gray.400'}>
+              <Text fontSize={'sm'} color={'gray.400'}>
                 Don't have an account? &nbsp;{' '}
               </Text>
-              <Text fontSize={'xs'} color={'brand.400'}>
+              <Text fontSize={'sm'} color={'brand.400'}>
                 <Link to="/signup">Create a new account here!</Link>
               </Text>
             </Flex>
 
-            <Box pt="2"></Box>
+            <Box pt="8"></Box>
             <Button colorScheme="brand" size="md">
               Login to your Dashboard
             </Button>
@@ -100,7 +100,7 @@ function Login() {
         <Spacer />
         <Box p="4">
           <Center>
-            <Image boxSize={'28em'} src="./logo.svg"></Image>
+            <Image boxSize={'37em'} src="./logo.svg"></Image>
           </Center>
         </Box>
       </Flex>
