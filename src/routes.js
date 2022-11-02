@@ -32,8 +32,8 @@ const routes = [
     main: () => <Bulletin />
   },
   {
-    path: "/analytics",
-    main: () => <Text>Analytics</Text>
+    path: "/analysis",
+    main: () => <Text>Analysis</Text>
   },
   {
     path: "/newsfeed",

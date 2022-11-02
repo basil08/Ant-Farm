@@ -7,12 +7,8 @@ import {
   Flex,
   HStack,
   VStack,
-  Icon,
   useColorModeValue,
-  Drawer,
-  DrawerContent,
   Text,
-  useDisclosure,
   Center,
   Square,
   Image,
@@ -22,78 +18,97 @@ import {
   MenuDivider,
   MenuList,
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import {
+  HomeIcon,
+  BoxIcon,
+  GlobeIcon,
+  DoubleCardsIcon,
+  HelpIcon,
+  GearIcon,
+  TextCloudIcon,
+} from '../icons';
+import NavItem from './navItem';
+import CompanyBadge from './companyBadge';
 
 const LinkItems = {
   investments: [
     {
       name: 'Dashboard',
-      icon: '',
+      icon: HomeIcon,
       toUrl: '/dashboard',
     },
     {
       name: 'Bulletin Board',
-      icon: '',
+      icon: TextCloudIcon,
       toUrl: '/bulletin',
     },
     {
       name: 'Portfolio Analysis',
-      icon: '',
+      icon: BoxIcon,
       toUrl: '/analysis',
     },
     {
       name: 'Newsfeed',
-      icon: '',
+      icon: GlobeIcon,
       toUrl: '/newsfeed',
     },
     {
       name: 'Transaction History',
-      icon: '',
+      icon: DoubleCardsIcon,
       toUrl: '/history',
     },
   ],
   information: [
     {
       name: 'Rules and Regulations',
-      icon: '',
+      icon: HelpIcon,
       toUrl: '/rar',
     },
     {
       name: 'My Account',
-      icon: '',
+      icon: GearIcon,
       toUrl: '/account',
     },
   ],
 };
 
-function Sidebar({ children }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+function Sidebar() {
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
-      <SidebarContent
-        onClose={() => onClose}
-        display={{ base: 'none', md: 'block' }}
-      />
-      <Drawer
-        autoFocus={false}
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        returnFocusOnClose={false}
-        onOverlayClick={onClose}
-        size="full"
-      >
-        <DrawerContent>
-          <SidebarContent onClose={onClose} />
-        </DrawerContent>
-      </Drawer>
+    <Flex
+      pos="sticky"
+      left="3"
+      bg="#F8F8F8"
+      h="100vh"
+      marginTop={'2.5vh'}
+      marginBottom={'2.5vh'}
+      boxShadow="0 4px 12 px 0 rgba(0, 0, 0, 0.5)"
+      borderRadius="30px"
+      w={'20%'}
+      flexDir="column"
+      justifyContent={'space-between'}
+    >
+      <Flex p="5%" flexDir="column" w="100%" alignItems="flex-start" as="nav">
+        <CompanyBadge />
 
-      {/* Mobile nav */}
-      <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
-      </Box>
-    </Box>
+        <Text fontWeight={'bold'} color={'gray.500'}>
+          INVESTMENTS
+        </Text>
+        {LinkItems.investments.map(link => (
+          <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
+            {link.name}
+          </NavItem>
+        ))}
+        <hr />
+        <Text fontWeight={'bold'} color={'gray.500'}>
+          INFORMATION
+        </Text>
+        {LinkItems.information.map(link => (
+          <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
+            {link.name}
+          </NavItem>
+        ))}
+      </Flex>
+    </Flex>
   );
 }
 
@@ -120,55 +135,19 @@ function SidebarContent({ onClose, ...rest }) {
       <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
     </Flex>
     <Text color={'gray.100'}>INVESTMENTS</Text>
-    {LinkItems.investments.map((link) => (
+    {LinkItems.investments.map(link => (
       <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
         {link.name}
       </NavItem>
     ))}
     <hr />
     <Text color={'gray.100'}>INFORMATION</Text>
-    {LinkItems.information.map((link) => (
+    {LinkItems.information.map(link => (
       <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
         {link.name}
       </NavItem>
     ))}
   </Box>;
-}
-
-function NavItem({ icon, children, toUrl, ...rest }) {
-  return (
-    <Link
-      to={toUrl}
-      style={{ textDecoration: 'none' }}
-      _focus={{ boxShadow: 'none' }}
-    >
-      <Flex
-        align="center"
-        p="4"
-        mx="4"
-        borderRadius={'lg'}
-        role="group"
-        cursor="pointer"
-        _hover={{
-          bg: 'brand.400',
-          color: 'white',
-        }}
-        {...rest}
-      >
-        {icon && (
-          <Icon
-            mr="4"
-            fontSize="16"
-            _groupHover={{
-              color: 'white',
-            }}
-            as={icon}
-          />
-        )}
-        {children}
-      </Flex>
-    </Link>
-  );
 }
 
 function MobileNav({ onOpen, ...rest }) {
@@ -222,7 +201,9 @@ function MobileNav({ onOpen, ...rest }) {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm" fontWeight={'bold'}>Parth Sharma</Text>
+                  <Text fontSize="sm" fontWeight={'bold'}>
+                    Parth Sharma
+                  </Text>
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}></Box>
               </HStack>

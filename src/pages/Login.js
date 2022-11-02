@@ -11,10 +11,11 @@ import {
   Input,
   Spacer,
   Button,
-  Square,
+  Divider
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
+import CompanyBadge from '../components/companyBadge';
 
 function Login() {
   const validateEmail = values => {
@@ -35,16 +36,7 @@ function Login() {
     <Box>
       <Flex>
         <Box p="4" pl="8">
-          <Flex>
-            <Center w="75px">
-              <Image boxSize="40px" objectFit="cover" src="./logo.svg" />
-            </Center>
-            <Square size="90px">
-              <Text fontSize={'lg'} fontWeight={'bold'}>
-                Ant Farm
-              </Text>
-            </Square>
-          </Flex>
+          <CompanyBadge />
           <Box p="2">
             <Text fontWeight={'bold'}>Login</Text>
             <Text color={'gray.500'}>
@@ -63,7 +55,7 @@ function Login() {
             </Center>
           </Box>
 
-          <hr />
+          <Divider />
 
           <Box p="4">
             <Box p="2"></Box>

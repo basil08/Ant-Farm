@@ -6,6 +6,7 @@ import {
 
 function Bulletin() {
   return (
+      
       <Sidebar />
   );
 }
