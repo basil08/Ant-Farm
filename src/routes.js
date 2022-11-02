@@ -1,5 +1,6 @@
 import {Text} from "@chakra-ui/react";
 import Login from "./pages/Login";
+import Bulletin from "./pages/Bulletin";
 
 const routes = [
   {
@@ -28,7 +29,7 @@ const routes = [
   },
   {
     path: "/bulletin",
-    main: () => <Text>Bulletin Board</Text>
+    main: () => <Bulletin />
   },
   {
     path: "/analytics",
