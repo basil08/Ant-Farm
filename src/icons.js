@@ -178,3 +178,24 @@ export const TextCloudIcon = createIcon({
     </>
   ),
 });
+
+export const DownArrow = createIcon({
+  displayName: 'Down Arrow',
+  viewBox: '0 0 24 24',
+
+  path: (
+    <>
+      <g clip-path="url(#clip0_4_761)">
+        <path
+          d="M16.59 8.58997L12 13.17L7.41 8.58997L6 9.99997L12 16L18 9.99997L16.59 8.58997Z"
+          fill="#434343"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_4_761">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </>
+  ),
+});

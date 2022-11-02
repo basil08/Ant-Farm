@@ -1,6 +1,13 @@
 import {Text} from "@chakra-ui/react";
 import Login from "./pages/Login";
 import Bulletin from "./pages/Bulletin";
+import Dashboard from "./pages/Dashboard";
+import PortfolioAnalytics from "./pages/PortfolioAnalytics";
+import Newsfeed from "./pages/Newsfeed";
+import RulesAndRegulations from "./pages/RulesAndRegulations";
+import Account from "./pages/Account";
+import PortfolioTransactionHistory from "./pages/PortfolioTransactionHistory";
+
 
 const routes = [
   {
@@ -12,6 +19,10 @@ const routes = [
     main: () => <Text>Signup</Text>
   },
   {
+    path: "/logout",
+    main: () => <Text>Logout</Text>
+  },
+  {
     path: "/forgotpassword",
     main: () => <Text>Forgot Password</Text>
   },
@@ -21,31 +32,31 @@ const routes = [
   },
   {
     path: "/dashboard",
-    main: () => <Text>Dashboard</Text>
+    main: () => <Dashboard />
   },
   {
     path: "/rar",
-    main: () => <Text>Rules and Regulations</Text>
+    main: () => <RulesAndRegulations />
   },
   {
     path: "/bulletin",
     main: () => <Bulletin />
   },
   {
-    path: "/analysis",
-    main: () => <Text>Analysis</Text>
+    path: "/analytics",
+    main: () => <PortfolioAnalytics />
   },
   {
     path: "/newsfeed",
-    main: () => <Text>Newsfeed</Text>
+    main: () => <Newsfeed />
   },
   {
     path: "/history",
-    main: () => <Text>History</Text>
+    main: () => <PortfolioTransactionHistory />
   },
   {
     path: "/account",
-    main: () => <Text>Account</Text>
+    main: () => <Account />
   },
 ];
 export default routes;

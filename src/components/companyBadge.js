@@ -14,7 +14,7 @@ export default function CompanyBadge() {
       <Image boxSize="40px" objectFit="cover" src="./logo.svg" />
     </Center>
     <Square size="90px">
-      <Text fontSize={'1.2em'} fontWeight={'bold'}>
+      <Text fontSize={'xl'} fontWeight={'bold'}>
         Ant Farm
       </Text>
     </Square>
