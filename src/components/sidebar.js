@@ -1,23 +1,7 @@
 import React from 'react';
 import {
-  IconButton,
-  Avatar,
-  Box,
-  CloseButton,
   Flex,
-  HStack,
-  VStack,
-  useColorModeValue,
   Text,
-  Center,
-  Square,
-  Image,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuDivider,
-  MenuList,
-  Spacer
 } from '@chakra-ui/react';
 import {
   HomeIcon,
