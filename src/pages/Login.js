@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Image,
@@ -13,11 +13,13 @@ import {
   Button,
   Divider
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import CompanyBadge from '../components/companyBadge';
 
 function Login() {
+  const [click, setClick] = useState(false);
+
   const validateEmail = values => {
     const errors = {};
 
@@ -36,6 +38,10 @@ function Login() {
     <Box>
       <Flex>
         <Box p="4" pl="8">
+          {/* Hack to navigate to dashboard when login is clicked */}
+          {/* NOTE: Remove this and include login logic before navigating to login */}
+          {click === true && <Navigate to="/dashboard"></Navigate>}
+
           <CompanyBadge />
           <Box p="2">
             <Text fontWeight={'bold'}>Login</Text>
@@ -134,6 +140,8 @@ function Login() {
                     size="md"
                     type="submit"
                     disabled={isSubmitting}
+
+                    onClick={() => setClick(true)}
                   >
                     Login to your Dashboard
                   </Button>

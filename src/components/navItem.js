@@ -18,6 +18,7 @@ function NavItem({ icon, children, toUrl, ...rest }) {
       <Flex
         align="center"
         p="2"
+        width="full"
         borderRadius={'lg'}
         role="group"
         cursor="pointer"

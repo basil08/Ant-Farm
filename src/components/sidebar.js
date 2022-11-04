@@ -29,14 +29,14 @@ const LinkItems = {
       toUrl: '/bulletin',
     },
     {
-      name: 'Portfolio Analytics',
-      icon: BoxIcon,
-      toUrl: '/analytics',
-    },
-    {
       name: 'Newsfeed',
       icon: GlobeIcon,
       toUrl: '/newsfeed',
+    },
+    {
+      name: 'Portfolio Analytics',
+      icon: BoxIcon,
+      toUrl: '/analytics',
     },
     {
       name: 'Transaction History',
@@ -62,14 +62,14 @@ function Sidebar() {
   return (
     <Flex
       pos="sticky"
-      left="4"
+      m="4"
       bg="#F8F8F8"
       h="100vh"
       marginTop={'2.5vh'}
       marginBottom={'2.5vh'}
       boxShadow="0 4px 12 px 0 rgba(0, 0, 0, 0.5)"
       borderRadius="30px"
-      w={'22%'}
+      w={'20%'}
       flexDir="column"
       justifyContent={'space-between'}
     >
