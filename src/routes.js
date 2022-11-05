@@ -7,7 +7,8 @@ import Newsfeed from "./pages/Newsfeed";
 import RulesAndRegulations from "./pages/RulesAndRegulations";
 import Account from "./pages/Account";
 import PortfolioTransactionHistory from "./pages/PortfolioTransactionHistory";
-
+import CompanyDetails from "./pages/CompanyDetails";
+import { Route } from "react-router-dom";
 
 const routes = [
   {
@@ -40,7 +41,13 @@ const routes = [
   },
   {
     path: "/bulletin",
-    main: () => <Bulletin />
+    main: () => <Bulletin />,
+    children: () => (
+      <Route
+       path=":companyTicker"
+       element={<CompanyDetails />}
+      />
+    )
   },
   {
     path: "/analytics",
@@ -58,5 +65,9 @@ const routes = [
     path: "/account",
     main: () => <Account />
   },
+  {
+    path: '/company/new',
+    main: () => <Text>Create New Company - Under Development</Text>
+  }
 ];
 export default routes;

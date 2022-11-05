@@ -20,7 +20,7 @@ export default function FilterBand({
       <Flex alignItems={'center'}>
         {categories.map((category, index) => (
           <Button
-            m="2"
+            m="1"
             key={index}
             bg={isActive === index ? 'brand.400' : 'white'}
             color={isActive === index ? 'white' : 'gray.500'}
