@@ -50,6 +50,105 @@ function Bulletin() {
     {
       logoUrl:
         'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      name: 'Alphabet Inc.',
+      ticker: 'GOOGL',
+      stockPrice: '99.87',
+      currencySymbol: '$',
+      changePercentage: '-1.74',
+    },
+    {
+      logoUrl:
+        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
       name: 'Apple Inc.',
       ticker: 'AAPL',
       stockPrice: '101.87',
@@ -64,15 +163,15 @@ function Bulletin() {
 
   // navigation management routes setup
   let navigate = useNavigate();
-  const handleCreateNewProposal = () => {
+  const handleAddNewCompany = () => {
     let path = '/company/new';
     navigate(path);
   };
 
-  const navigateToCompanyDetailPage = ticker => {
-    let path = `/bulletin/${ticker}`;
-    navigate(path);
-  };
+  // const navigateToCompanyDetailPage = ticker => {
+  //   let path = `/bulletin/${ticker}`;
+  //   navigate(path);
+  // };
 
   // DOM interaction handlers
   const handleFilterChange = index => setIsActive(index);
@@ -106,35 +205,38 @@ function Bulletin() {
         <Flex m="4">
           <Grid templateColumns={'repeat(4, 1fr)'} gap={6}>
             {companies.map((company, index) => (
-              <LinkBox as="article"
-               _hover={{
-                border: '2px',
-                borderRadius: '20'
-                , borderColor: 'gray.100'
-               }}
+              <LinkBox
+                as="article"
+                _hover={{
+                  border: '2px',
+                  borderRadius: '20',
+                  borderColor: 'gray.100',
+                }}
               >
                 <GridItem key={index} w="100%">
-                  <LinkOverlay href={`/bulletin/${company.ticker}`}></LinkOverlay>
-                  <CompanyCard
-                    company={company}
-                  />
+                  <LinkOverlay
+                    href={`/bulletin/${company.ticker}`}
+                  ></LinkOverlay>
+                  <CompanyCard company={company} />
                 </GridItem>
               </LinkBox>
             ))}
           </Grid>
         </Flex>
-        <Flex m="4" pos="sticky" bottom={'0'} p="4">
-          <Button
-            bg="brand.400"
-            color="white"
-            _hover={{ backgroundColor: 'white', color: 'brand.400' }}
-            onClick={handleCreateNewProposal}
-          >
-            <Flex p="2">
-              <AddIcon />
-            </Flex>
-            <Text>Add a Company to the Discussion</Text>
-          </Button>
+        <Flex  pos="sticky" bottom={'0'} p="4">
+          <Flex w="100%" p="4" bg="gray.100">
+            <Button
+              bg="brand.400"
+              color="white"
+              _hover={{ backgroundColor: 'white', color: 'brand.400' }}
+              onClick={handleAddNewCompany}
+            >
+              <Flex p="2">
+                <AddIcon />
+              </Flex>
+              <Text>Add a Company to the Discussion</Text>
+            </Button>
+          </Flex>
         </Flex>
       </Flex>
       <Outlet />

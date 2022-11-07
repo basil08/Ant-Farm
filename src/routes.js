@@ -8,7 +8,6 @@ import RulesAndRegulations from "./pages/RulesAndRegulations";
 import Account from "./pages/Account";
 import PortfolioTransactionHistory from "./pages/PortfolioTransactionHistory";
 import CompanyDetails from "./pages/CompanyDetails";
-import { Route } from "react-router-dom";
 
 const routes = [
   {
@@ -42,12 +41,16 @@ const routes = [
   {
     path: "/bulletin",
     main: () => <Bulletin />,
-    children: () => (
-      <Route
-       path=":companyTicker"
-       element={<CompanyDetails />}
-      />
-    )
+    // children: () => (
+    //   <Route
+    //    path=":companyTicker"
+    //    element={<CompanyDetails />}
+    //   />
+    // )
+  },
+  {
+    path: "/bulletin/:companyTicker",
+    main: () => <CompanyDetails />
   },
   {
     path: "/analytics",

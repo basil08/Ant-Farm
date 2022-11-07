@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Flex,
-  Text,
-} from '@chakra-ui/react';
+import { Button, Flex, Text } from '@chakra-ui/react';
 import {
   HomeIcon,
   BoxIcon,
@@ -12,9 +9,12 @@ import {
   GearIcon,
   TextCloudIcon,
 } from '../icons';
+
+import { AddIcon } from '@chakra-ui/icons';
+
 import NavItem from './navItem';
 import CompanyBadge from './companyBadge';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LinkItems = {
   investments: [
@@ -59,6 +59,13 @@ const LinkItems = {
 };
 
 function Sidebar() {
+  let navigate = useNavigate();
+
+  const navigateToProposalForm = () => {
+    let path = `/bulletin/new`;
+    navigate(path);
+  };
+
   return (
     <Flex
       pos="sticky"
@@ -76,6 +83,18 @@ function Sidebar() {
       <Flex p="5%" flexDir="column" w="100%" alignItems="flex-start" as="nav">
         <CompanyBadge />
 
+        <Button
+          mb="2"
+          bg={'brand.400'}
+          color="white"
+          _hover={{ backgroundColor: 'white', color: 'brand.400', borderColor:"brand.400", border:"2px" }}
+          onClick={navigateToProposalForm}
+        >
+          <Flex p="2">
+            <AddIcon />
+          </Flex>
+          Raise a proposal
+        </Button>
         <Text fontWeight={'bold'} color={'gray.500'}>
           INVESTMENTS
         </Text>
