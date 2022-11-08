@@ -69,7 +69,7 @@ function Sidebar() {
       pos="sticky"
       m="4"
       bg="#F8F8F8"
-      h="100vh"
+      h="fit-window"
       marginTop={'2.5vh'}
       marginBottom={'2.5vh'}
       boxShadow="0 4px 12 px 0 rgba(0, 0, 0, 0.5)"
@@ -79,56 +79,53 @@ function Sidebar() {
       justifyContent={'space-between'}
     >
       <Flex p="5%" flexDir="column" w="100%" alignItems="flex-start" as="nav">
-        <CompanyBadge />
+          <CompanyBadge />
 
-        <Button
-          mb="2"
-          bg={'brand.400'}
-          color="white"
-          _hover={{
-            backgroundColor: 'white',
-            color: 'brand.400',
-            borderColor: 'brand.400',
-            border: '2px',
-          }}
-          onClick={navigateToProposalForm}
-        >
-          <Flex p="2">
-            <AddIcon />
-          </Flex>
-          Raise a proposal
-        </Button>
-        <Text fontWeight={'bold'} color={'gray.500'}>
-          INVESTMENTS
-        </Text>
-        {LinkItems.investments.map(link => (
-          <Flex
-           w="100%"
-           
+          <Button
+            mb="2"
+            bg={'brand.400'}
+            color="white"
+            _hover={{
+              backgroundColor: 'white',
+              color: 'brand.400',
+              borderColor: 'brand.400',
+              border: '2px',
+            }}
+            onClick={navigateToProposalForm}
           >
+            <Flex p="2">
+              <AddIcon />
+            </Flex>
+            Raise a proposal
+          </Button>
+          <Text fontWeight={'bold'} color={'gray.500'}>
+            INVESTMENTS
+          </Text>
+          {LinkItems.investments.map(link => (
+            <Flex w="100%">
+              <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
+                {link.name}
+              </NavItem>
+            </Flex>
+          ))}
+          <hr />
+          <Text fontWeight={'bold'} color={'gray.500'}>
+            INFORMATION
+          </Text>
+          {LinkItems.information.map(link => (
             <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
               {link.name}
             </NavItem>
-          </Flex>
-        ))}
-        <hr />
-        <Text fontWeight={'bold'} color={'gray.500'}>
-          INFORMATION
-        </Text>
-        {LinkItems.information.map(link => (
-          <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
-            {link.name}
-          </NavItem>
-        ))}
+          ))}
+        </Flex>
 
-        <Flex>
+        <Flex justifyContent={"center"}>
           <Link to={`/logout`}>
-            <Text color="gray.400" fontWeight={'bold'}>
+            <Text color="gray.400"  fontWeight={'bold'}>
               LOGOUT
             </Text>
           </Link>
         </Flex>
-      </Flex>
     </Flex>
   );
 }
