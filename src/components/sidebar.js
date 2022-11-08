@@ -1,15 +1,13 @@
 import React from 'react';
 import { Button, Flex, Text } from '@chakra-ui/react';
-import {
-  HomeIcon,
-  BoxIcon,
-  GlobeIcon,
-  DoubleCardsIcon,
-  HelpIcon,
-  GearIcon,
-  TextCloudIcon,
-} from '../icons';
 
+import { AiOutlineGlobal as GlobeIcon } from 'react-icons/ai';
+import { AiOutlineQuestionCircle as HelpIcon } from 'react-icons/ai';
+import { AiOutlineHome as HomeIcon } from 'react-icons/ai';
+import { AiOutlineInbox as BoxIcon } from 'react-icons/ai';
+import { AiOutlineCreditCard as DoubleCardsIcon } from 'react-icons/ai';
+import { AiOutlineSetting as GearIcon } from 'react-icons/ai';
+import { BsChatSquare as TextCloudIcon } from 'react-icons/bs';
 import { AddIcon } from '@chakra-ui/icons';
 
 import NavItem from './navItem';
@@ -87,7 +85,12 @@ function Sidebar() {
           mb="2"
           bg={'brand.400'}
           color="white"
-          _hover={{ backgroundColor: 'white', color: 'brand.400', borderColor:"brand.400", border:"2px" }}
+          _hover={{
+            backgroundColor: 'white',
+            color: 'brand.400',
+            borderColor: 'brand.400',
+            border: '2px',
+          }}
           onClick={navigateToProposalForm}
         >
           <Flex p="2">
@@ -99,9 +102,14 @@ function Sidebar() {
           INVESTMENTS
         </Text>
         {LinkItems.investments.map(link => (
-          <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
-            {link.name}
-          </NavItem>
+          <Flex
+           w="100%"
+           
+          >
+            <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
+              {link.name}
+            </NavItem>
+          </Flex>
         ))}
         <hr />
         <Text fontWeight={'bold'} color={'gray.500'}>

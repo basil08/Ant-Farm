@@ -11,7 +11,7 @@ export default function CompanyBadge() {
   return (
     <Flex w="100%">
     <Center w="75px">
-      <Image boxSize="40px" objectFit="cover" src="./logo.svg" />
+      <Image boxSize="40px" objectFit="cover" src="/logo.svg" />
     </Center>
     <Square size="90px">
       <Text fontSize={'xl'} fontWeight={'bold'}>

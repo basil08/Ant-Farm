@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Link
+  NavLink
 } from "react-router-dom";
 
 import {
@@ -10,7 +10,7 @@ import {
 
 function NavItem({ icon, children, toUrl, ...rest }) {
   return (
-    <Link
+    <NavLink
       to={toUrl}
       style={{ textDecoration: 'none' }}
       _focus={{ boxShadow: 'none' }}
@@ -18,7 +18,6 @@ function NavItem({ icon, children, toUrl, ...rest }) {
       <Flex
         align="center"
         p="2"
-        width="full"
         borderRadius={'lg'}
         role="group"
         cursor="pointer"
@@ -31,8 +30,8 @@ function NavItem({ icon, children, toUrl, ...rest }) {
         {icon && (
           <Icon
             mr="4"
-            w="6"
-            h="6"
+            w="5"
+            h="5"
             _groupHover={{
               color: 'white',
             }}
@@ -41,7 +40,7 @@ function NavItem({ icon, children, toUrl, ...rest }) {
         )}
         {children}
       </Flex>
-    </Link>
+    </NavLink>
   );
 }
 
