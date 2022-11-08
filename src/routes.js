@@ -8,6 +8,8 @@ import RulesAndRegulations from "./pages/RulesAndRegulations";
 import Account from "./pages/Account";
 import PortfolioTransactionHistory from "./pages/PortfolioTransactionHistory";
 import CompanyDetails from "./pages/CompanyDetails";
+import ProposalDetails from "./pages/ProposalDetails";
+import ProposalForm from "./pages/ProposalForm";
 
 const routes = [
   {
@@ -51,6 +53,14 @@ const routes = [
   {
     path: "/bulletin/:companyTicker",
     main: () => <CompanyDetails />
+  },
+  {
+    path: "/bulletin/:companyTicker/:proposalId",
+    main: () => <ProposalDetails />
+  },
+  {
+    path: "/bulletin/new",
+    main: () => <ProposalForm />
   },
   {
     path: "/analytics",

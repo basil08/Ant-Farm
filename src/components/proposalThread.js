@@ -9,6 +9,7 @@ export default function ProposalThread({ ticker, handleReportConfirmationModal }
   // const proposals = getProposals(ticker);
   const proposals = [
     {
+      id: 1,
       ticker: ticker,
       action: "BUY",
       days: 30,
@@ -24,6 +25,7 @@ export default function ProposalThread({ ticker, handleReportConfirmationModal }
       timestamp: "2022-11-07T05:01:30+0000"
     },
     {
+      id: 2,
       ticker: ticker,
       action: "SELL",
       days: 12,
@@ -43,7 +45,7 @@ export default function ProposalThread({ ticker, handleReportConfirmationModal }
   return (
     <Flex flexDir={"column"} m="4">
       {proposals.map((proposal, index) => (
-        <ProposalCard proposal={proposal} key={index} handleReportConfirmationModal={handleReportConfirmationModal} />
+        <ProposalCard proposal={proposal} key={index}  />
       ))}
     </Flex>
   )

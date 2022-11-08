@@ -206,13 +206,7 @@ function Bulletin() {
           <Grid templateColumns={'repeat(4, 1fr)'} gap={6}>
             {companies.map((company, index) => (
               <LinkBox
-                as="article"
-                _hover={{
-                  border: '2px',
-                  borderRadius: '20',
-                  borderColor: 'gray.100',
-                }}
-              >
+                as="article">
                 <GridItem key={index} w="100%">
                   <LinkOverlay
                     href={`/bulletin/${company.ticker}`}

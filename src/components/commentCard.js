@@ -14,15 +14,13 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  LinkBox,
-  LinkOverlay
+  Avatar,
 } from '@chakra-ui/react';
 
 import { ArrowUpIcon, ArrowDownIcon, WarningIcon } from '@chakra-ui/icons';
 import moment from 'moment/moment';
 
-
-export default function ProposalCard({ proposal }) {
+export default function CommentCard({ comment }) {
   const [isUpvoted, setIsUpvoted] = useState(false);
   const [isDownvoted, setIsDownvoted] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -44,7 +42,7 @@ export default function ProposalCard({ proposal }) {
     onOpen(!isOpen);
   };
 
-  const reportProposal = () => {
+  const reportComment = () => {
     // use state variable reportableId here
     console.log(`Reporting id: ${reportableId}`);
   };
@@ -57,73 +55,56 @@ export default function ProposalCard({ proposal }) {
       width={'100%'}
       border={'1px'}
       borderRadius="20"
-      flexDir={'column'}
       borderColor={'gray.300'}
     >
+      <Flex w="10%" pr="2"><Avatar size={"md"} src={comment.avatarUrl}></Avatar></Flex>
       <Flex flexDir={'column'}>
         <Flex>
-          <LinkBox as="span">
-            <LinkOverlay href={`/bulletin/${proposal.ticker}/${proposal.id}`}>
-          <Text as="span" fontWeight={'bold'} fontSize="lg">
-            Action:
-            <Text
-              as="span"
-              color={proposal.action === 'BUY' ? 'green' : 'brand.300'}
-            >
-              {' '}
-              {proposal.action}{' '}
-            </Text>
-            {proposal.ticker} | {proposal.days} days{' '}
-          </Text>
-            </LinkOverlay>
-
-          </LinkBox>
+          <Text fontWeight={"bold"}>{comment.author}</Text>
         </Flex>
         <Text color="gray.400" fontSize="sm">
-          {moment(proposal.timestamp).fromNow()}
+          {moment(comment.timestamp).fromNow()}
         </Text>
         <Text color="gray.500" p="2">
-          {proposal.text}
+          {comment.text}
         </Text>
         <Text>
           <OrderedList>
-            {proposal.links.map((link, index) => (
+            {comment.links.map((link, index) => (
               <ListItem color={'#5BB0FF'} key={index}>
                 <Link href={link.url}>{link.title}</Link>
               </ListItem>
             ))}
           </OrderedList>
         </Text>
-      </Flex>
 
-      <Flex m="4">
+        <Flex m="4">
         <Button
           mr="4"
           variant={'outline'}
-          onClick={() => handleUpvote(proposal.id)}
+          onClick={() => handleUpvote(comment.id)}
           color={isUpvoted ? 'green' : 'gray.600'}
           borderColor={isUpvoted ? 'green' : 'gray.400'}
         >
-          UPVOTES {proposal.upvotes} <ArrowUpIcon />
+          UPVOTES {comment.upvotes} <ArrowUpIcon />
         </Button>
         <Button
           mr="4"
           variant={'outline'}
-          onClick={() => handleDownvote(proposal.id)}
+          onClick={() => handleDownvote(comment.id)}
           color={isDownvoted ? 'brand.400' : 'gray.600'}
           borderColor={isDownvoted ? 'brand.400' : 'gray.400'}
         >
-          DOWNVOTES {proposal.downvotes} <ArrowDownIcon />
+          DOWNVOTES {comment.downvotes} <ArrowDownIcon />
         </Button>
         <Button
           mr="4"
           variant={'outline'}
-          onClick={() => handleReportConfirmationModal(proposal.id)}
+          onClick={() => handleReportConfirmationModal(comment.id)}
           borderColor={'gray.400'}
         >
           REPORT
         </Button>
-
 
         <Modal
           isOpen={isOpen}
@@ -149,13 +130,16 @@ export default function ProposalCard({ proposal }) {
               <Button colorScheme={'brand'} mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button onClick={() => reportProposal()} variant="ghost">
+              <Button onClick={() => reportComment()} variant="ghost">
                 Yes, do it!
               </Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
       </Flex>
+      </Flex>
+
+
     </Flex>
   );
 }

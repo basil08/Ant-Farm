@@ -9,9 +9,16 @@ import {
   Heading,
   Button,
   useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 
-import { AddIcon } from '@chakra-ui/icons';
+import { AddIcon, WarningIcon } from '@chakra-ui/icons';
 
 import React from 'react';
 
@@ -58,13 +65,8 @@ export default function CompanyDetails() {
   let navigate = useNavigate();
 
   const handleCreateNewProposal = ticker => {
-    let path = `/bulletin/${ticker}/new`;
+    let path = `/bulletin/new`;
     navigate(path);
-  };
-
-  const handleReportConfirmationModal = () => {
-    // dummy placeholder
-    // onOpen(!isOpen);
   };
 
   return (
@@ -110,11 +112,10 @@ export default function CompanyDetails() {
             <TabPanel>
               <ProposalThread
                 ticker={company.ticker}
-                handleReportConfirmationModal={handleReportConfirmationModal}
               />
             </TabPanel>
             <TabPanel>
-              <GeneralDiscussionThread />
+              <GeneralDiscussionThread ticker={company.ticker} />
             </TabPanel>
           </TabPanels>
         </Tabs>
