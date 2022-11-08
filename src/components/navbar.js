@@ -19,7 +19,7 @@ export default function Navbar({ title, subtitle, user }) {
     <Flex justifyContent={'space-between'} height="10vh" width="100%">
     <Flex flexDir="column">
       <Heading>{title}</Heading>
-      <Text>{subtitle}</Text>
+      <Text color="gray.500">{subtitle}</Text>
     </Flex>
     <Flex p="4">
       <Menu>

@@ -24,7 +24,6 @@ import {
   PopoverContent,
   PopoverCloseButton,
   PopoverBody,
-  PopoverHeader,
   PopoverFooter,
   Portal,
   PopoverTrigger,

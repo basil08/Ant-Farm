@@ -8,17 +8,9 @@ import {
   Text,
   Heading,
   Button,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
 } from '@chakra-ui/react';
 
-import { AddIcon, WarningIcon } from '@chakra-ui/icons';
+import { AddIcon } from '@chakra-ui/icons';
 
 import React from 'react';
 
@@ -72,7 +64,7 @@ export default function CompanyDetails() {
   return (
     <Flex minHeight={'100vh'} height={'fit-content'} width={'98vw'}>
       <Sidebar />
-      <Flex flexDir="column" height={'fit-content'} width="50%">
+      <Flex flexDir="column" height={'fit-content'} width="55%">
         <Flex m="4" flexDir={'column'}>
           <Heading>
             <Flex>
@@ -110,9 +102,7 @@ export default function CompanyDetails() {
 
           <TabPanels>
             <TabPanel>
-              <ProposalThread
-                ticker={company.ticker}
-              />
+              <ProposalThread ticker={company.ticker} />
             </TabPanel>
             <TabPanel>
               <GeneralDiscussionThread ticker={company.ticker} />

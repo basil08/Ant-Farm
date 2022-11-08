@@ -1,31 +1,17 @@
 import {
   Flex,
-  Tabs,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
   Text,
   Heading,
   Button,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
 } from '@chakra-ui/react';
 
-import { AddIcon, WarningIcon } from '@chakra-ui/icons';
+import { AddIcon } from '@chakra-ui/icons';
 
 import React from 'react';
 
 import { useNavigate, useParams } from 'react-router-dom';
 import Sidebar from '../components/sidebar';
 import CompanyStats from '../components/companyStats';
-import GeneralDiscussionThread from '../components/generalDiscussionThread';
 
 import { Outlet } from 'react-router-dom';
 
@@ -39,7 +25,7 @@ export default function ProposalDetails() {
   const proposals = [
     {
       id: 1,
-      ticker: proposal.companyTicker,
+      ticker: "AAPL",
       action: "BUY",
       days: 30,
       text: "Irure excepteur enim exercitation. Lorem minim consequat sint commodo commodo enim. Laboris adipisicing sit non eu dolor reprehenderit qui non elit pariatur elit incididunt. Laborum sint ex eu ad qui elit incididunt nostrud mollit dolore. Ad mollit nostrud do veniam cupidatat nisi enim tempor ad ex aliqua velit sunt commodo.",
@@ -55,7 +41,7 @@ export default function ProposalDetails() {
     },
     {
       id: 2,
-      ticker: proposal.companyTicker,
+      ticker: "GOOGL",
       action: "SELL",
       days: 12,
       text: "Irure excepteur enim exercitation. Lorem minim consequat sint commodo commodo enim. Laboris adipisicing sit non eu dolor reprehenderit qui non elit pariatur elit incididunt. Laborum sint ex eu ad qui elit incididunt nostrud mollit dolore. Ad mollit nostrud do veniam cupidatat nisi enim tempor ad ex aliqua velit sunt commodo.",
