@@ -8,8 +8,12 @@ import Navbar from "../components/navbar";
 
 function Account() {
   return (
-      <Flex w="100%">
-        <Sidebar />
+
+    <Flex minHeight={'100vh'} height={'fit-content'} width={'98vw'}>
+      <Sidebar />
+      <Flex flexDir="column" height={'fit-content'} width="95%">
+        <Flex m="4">
+        </Flex>
         <Navbar
           title="My Account"
           subtitle="Make money the right way, and see how your favourite ESG indicators are performing."
@@ -19,6 +23,7 @@ function Account() {
           }}
         />
       </Flex>
+    </Flex>
   );
 }
 

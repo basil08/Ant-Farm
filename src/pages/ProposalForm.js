@@ -6,11 +6,6 @@ import {
   HStack,
   useRadioGroup,
   Textarea,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
   Heading,
   FormControl,
   FormLabel,
@@ -67,6 +62,12 @@ function RadioCard(props) {
 export default function ProposalForm() {
   const options = ['BUY', 'SELL'];
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const durationOptions = [
+    { name: "1 Day", value: 1 },
+    { name: "1 Week", value: 7 },
+    { name: "1 Month", value: 30 }
+  ];
 
   const envOptions = [
     { name: 'Climate Policy' },
@@ -176,13 +177,11 @@ export default function ProposalForm() {
               <FormLabel>
                 <Text fontWeight={'bold'}>For how long?</Text>
               </FormLabel>
-              <NumberInput>
-                <NumberInputField />
-                <NumberInputStepper>
-                  <NumberIncrementStepper />
-                  <NumberDecrementStepper />
-                </NumberInputStepper>
-              </NumberInput>
+              <Select p="2" placeholder="Selection duration for this action">
+                {durationOptions.map((opt, index) => (
+                  <option value={opt.value}>{opt.name}</option>
+                ))}
+              </Select>
             </FormControl>
 
             <FormControl p="2">

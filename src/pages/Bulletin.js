@@ -207,7 +207,7 @@ function Bulletin() {
             ))}
           </Grid>
         </Flex>
-        <Flex  pos="sticky" bottom={'0'} p="4">
+        <Flex pos="sticky" bottom={'0'} p="4">
           <Flex w="100%" p="4" bg="gray.100">
             <Button
               bg="brand.400"
