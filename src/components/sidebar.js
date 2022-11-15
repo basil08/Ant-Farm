@@ -1,6 +1,11 @@
 import React from 'react';
 import {
-  Button, Flex, Select, Text, useDisclosure, Modal,
+  Button,
+  Flex,
+  Select,
+  Text,
+  useDisclosure,
+  Modal,
   ModalOverlay,
   ModalHeader,
   ModalContent,
@@ -48,7 +53,7 @@ const LinkItems = {
       name: 'Transaction History',
       icon: DoubleCardsIcon,
       toUrl: '/history',
-    }
+    },
   ],
   information: [
     {
@@ -68,26 +73,26 @@ function Sidebar() {
   let navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const navigateToProposalForm = (ticker) => {
+  const navigateToProposalForm = ticker => {
     let path = `/bulletin/new?ticker=${ticker}`;
     navigate(path);
   };
 
   const handleTickerForm = () => {
     onOpen(!isOpen);
-  }
+  };
 
   // get these from some API
   const companies = [
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
-    { ticker: "GOOGL" },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
+    { ticker: 'GOOGL' },
   ];
 
   return (
@@ -128,16 +133,13 @@ function Sidebar() {
         ))}
       </Flex>
 
-      <Flex>&nbsp;</Flex>
-      <Flex>&nbsp;</Flex>
-      <Flex>&nbsp;</Flex>
-      <Flex>&nbsp;</Flex>
+      {/* Fix Raise a New proposal Form to window height NOT content-height */}
       <Flex>&nbsp;</Flex>
       <Flex>&nbsp;</Flex>
       <Flex>&nbsp;</Flex>
       <Flex>&nbsp;</Flex>
 
-      <Flex justifyContent={"center"}>
+      <Flex justifyContent={'center'}>
         <Button
           mb="2"
           bg={'brand.400'}
@@ -151,8 +153,7 @@ function Sidebar() {
           }}
           onClick={handleTickerForm}
         >
-          <Flex p="2">
-          </Flex>
+          <Flex p="2"></Flex>
           Raise a proposal
         </Button>
       </Flex>
@@ -162,23 +163,26 @@ function Sidebar() {
         onClose={() => {
           onClose();
         }}
-
         isCentered
       >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <Text as="span" fontWeight={"bold"}>
+            <Text as="span" fontWeight={'bold'}>
               Raise a New Proposal
             </Text>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text color="mygray.100" fontSize="sm" fontWeight={"bold"} p="1">SELECT COMPANY TICKER</Text>
+            <Text color="mygray.100" fontSize="sm" fontWeight={'bold'} p="1">
+              SELECT COMPANY TICKER
+            </Text>
             <FormControl>
               <Select>
                 {companies.map((company, index) => (
-                  <option key={index} value={company.ticker}>{company.ticker}</option>
+                  <option key={index} value={company.ticker}>
+                    {company.ticker}
+                  </option>
                 ))}
               </Select>
             </FormControl>
@@ -191,7 +195,6 @@ function Sidebar() {
           </ModalFooter>
         </ModalContent>
       </Modal>
-
     </Flex>
   );
 }
