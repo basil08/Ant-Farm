@@ -1,5 +1,14 @@
 import React from 'react';
-import { Button, Flex, Text } from '@chakra-ui/react';
+import {
+  Button, Flex, Select, Text, useDisclosure, Modal,
+  ModalOverlay,
+  ModalHeader,
+  ModalContent,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  FormControl,
+} from '@chakra-ui/react';
 
 import { AiOutlineGlobal as GlobeIcon } from 'react-icons/ai';
 import { AiOutlineQuestionCircle as HelpIcon } from 'react-icons/ai';
@@ -8,11 +17,10 @@ import { AiOutlineInbox as BoxIcon } from 'react-icons/ai';
 import { AiOutlineCreditCard as DoubleCardsIcon } from 'react-icons/ai';
 import { AiOutlineSetting as GearIcon } from 'react-icons/ai';
 import { BsChatSquare as TextCloudIcon } from 'react-icons/bs';
-import { AddIcon } from '@chakra-ui/icons';
 
 import NavItem from './navItem';
 import CompanyBadge from './companyBadge';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LinkItems = {
   investments: [
@@ -40,7 +48,7 @@ const LinkItems = {
       name: 'Transaction History',
       icon: DoubleCardsIcon,
       toUrl: '/history',
-    },
+    }
   ],
   information: [
     {
@@ -58,18 +66,36 @@ const LinkItems = {
 
 function Sidebar() {
   let navigate = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const navigateToProposalForm = () => {
-    let path = `/bulletin/new`;
+  const navigateToProposalForm = (ticker) => {
+    let path = `/bulletin/new?ticker=${ticker}`;
     navigate(path);
   };
+
+  const handleTickerForm = () => {
+    onOpen(!isOpen);
+  }
+
+  // get these from some API
+  const companies = [
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+    { ticker: "GOOGL" },
+  ];
 
   return (
     <Flex
       pos="sticky"
       m="4"
       bg="#F8F8F8"
-      h="fit-window"
+      h="150%"
       marginTop={'2.5vh'}
       marginBottom={'2.5vh'}
       boxShadow="0 4px 12 px 0 rgba(0, 0, 0, 0.5)"
@@ -79,53 +105,93 @@ function Sidebar() {
       justifyContent={'space-between'}
     >
       <Flex p="5%" flexDir="column" w="100%" alignItems="flex-start" as="nav">
-          <CompanyBadge />
+        <CompanyBadge />
 
-          <Button
-            mb="2"
-            bg={'brand.400'}
-            color="white"
-            _hover={{
-              backgroundColor: 'white',
-              color: 'brand.400',
-              borderColor: 'brand.400',
-              border: '2px',
-            }}
-            onClick={navigateToProposalForm}
-          >
-            <Flex p="2">
-              <AddIcon />
-            </Flex>
-            Raise a proposal
-          </Button>
-          <Text fontWeight={'bold'} color={'gray.500'}>
-            INVESTMENTS
-          </Text>
-          {LinkItems.investments.map(link => (
-            <Flex w="100%">
-              <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
-                {link.name}
-              </NavItem>
-            </Flex>
-          ))}
-          <hr />
-          <Text fontWeight={'bold'} color={'gray.500'}>
-            INFORMATION
-          </Text>
-          {LinkItems.information.map(link => (
+        <Text fontWeight={'bold'} color={'gray.500'}>
+          INVESTMENTS
+        </Text>
+        {LinkItems.investments.map(link => (
+          <Flex w="100%">
             <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
               {link.name}
             </NavItem>
-          ))}
-        </Flex>
+          </Flex>
+        ))}
+        <hr />
+        <Text fontWeight={'bold'} color={'gray.500'}>
+          INFORMATION
+        </Text>
+        {LinkItems.information.map(link => (
+          <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
+            {link.name}
+          </NavItem>
+        ))}
+      </Flex>
 
-        <Flex justifyContent={"center"}>
-          <Link to={`/logout`}>
-            <Text color="gray.400"  fontWeight={'bold'}>
-              LOGOUT
+      <Flex>&nbsp;</Flex>
+      <Flex>&nbsp;</Flex>
+      <Flex>&nbsp;</Flex>
+      <Flex>&nbsp;</Flex>
+      <Flex>&nbsp;</Flex>
+      <Flex>&nbsp;</Flex>
+      <Flex>&nbsp;</Flex>
+      <Flex>&nbsp;</Flex>
+
+      <Flex justifyContent={"center"}>
+        <Button
+          mb="2"
+          bg={'brand.400'}
+          color="white"
+          borderRadius={20}
+          _hover={{
+            backgroundColor: 'white',
+            color: 'brand.400',
+            borderColor: 'brand.400',
+            border: '2px',
+          }}
+          onClick={handleTickerForm}
+        >
+          <Flex p="2">
+          </Flex>
+          Raise a proposal
+        </Button>
+      </Flex>
+
+      <Modal
+        isOpen={isOpen}
+        onClose={() => {
+          onClose();
+        }}
+
+        isCentered
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>
+            <Text as="span" fontWeight={"bold"}>
+              Raise a New Proposal
             </Text>
-          </Link>
-        </Flex>
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text color="mygray.100" fontSize="sm" fontWeight={"bold"} p="1">SELECT COMPANY TICKER</Text>
+            <FormControl>
+              <Select>
+                {companies.map((company, index) => (
+                  <option key={index} value={company.ticker}>{company.ticker}</option>
+                ))}
+              </Select>
+            </FormControl>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button bg="#009E10" color="white" onClick={navigateToProposalForm}>
+              RAISE PROPOSAL
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
     </Flex>
   );
 }

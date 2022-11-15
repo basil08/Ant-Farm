@@ -6,6 +6,10 @@ const theme = extendTheme({
     // body: `'SFProDisplayRegular', 'Georgia'`
   },
   colors: {
+    mygray: {
+      100: '#9A9A9A',
+      200: '#8F8F8F',
+    },
     brand: {
       100: '#F13322',
       200: '#F13322',

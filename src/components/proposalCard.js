@@ -64,17 +64,17 @@ export default function ProposalCard({ proposal }) {
         <Flex>
           <LinkBox as="span">
             <LinkOverlay href={`/bulletin/${proposal.ticker}/${proposal.id}`}>
-          <Text as="span" fontWeight={'bold'} fontSize="lg">
-            Action:
-            <Text
-              as="span"
-              color={proposal.action === 'BUY' ? 'green' : 'brand.300'}
-            >
-              {' '}
-              {proposal.action}{' '}
-            </Text>
-            {proposal.ticker} | {proposal.days} days{' '}
-          </Text>
+              <Text as="span" fontWeight={'bold'} fontSize="lg">
+                Action:
+                <Text
+                  as="span"
+                  color={proposal.action === 'BUY' ? 'green' : 'brand.300'}
+                >
+                  {' '}
+                  {proposal.action}{' '}
+                </Text>
+                {proposal.ticker} | {proposal.days} days{' '}
+              </Text>
             </LinkOverlay>
 
           </LinkBox>

@@ -3,8 +3,6 @@ import {
   Flex,
   Grid,
   GridItem,
-  Text,
-  Button,
   LinkOverlay,
   LinkBox,
 } from '@chakra-ui/react';
@@ -13,8 +11,7 @@ import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
 import FilterBand from '../components/filterBand';
 import CompanyCard from '../components/companyCard';
-import { AddIcon } from '@chakra-ui/icons';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 function Bulletin() {
   const categories = [
@@ -152,11 +149,7 @@ function Bulletin() {
   const [isActive, setIsActive] = useState(0);
 
   // navigation management routes setup
-  let navigate = useNavigate();
-  const handleAddNewCompany = () => {
-    let path = '/company/new';
-    navigate(path);
-  };
+  // let navigate = useNavigate();
 
   // const navigateToCompanyDetailPage = ticker => {
   //   let path = `/bulletin/${ticker}`;
@@ -207,21 +200,7 @@ function Bulletin() {
             ))}
           </Grid>
         </Flex>
-        <Flex pos="sticky" bottom={'0'} p="4">
-          <Flex w="100%" p="4" bg="gray.100">
-            <Button
-              bg="brand.400"
-              color="white"
-              _hover={{ backgroundColor: 'white', color: 'brand.400' }}
-              onClick={handleAddNewCompany}
-            >
-              <Flex p="2">
-                <AddIcon />
-              </Flex>
-              <Text>Add a Company to the Discussion</Text>
-            </Button>
-          </Flex>
-        </Flex>
+      
       </Flex>
       <Outlet />
     </Flex>

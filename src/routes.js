@@ -10,6 +10,8 @@ import PortfolioTransactionHistory from "./pages/PortfolioTransactionHistory";
 import CompanyDetails from "./pages/CompanyDetails";
 import ProposalDetails from "./pages/ProposalDetails";
 import ProposalForm from "./pages/ProposalForm";
+import ESGAnalytics from "./pages/ESGAnalytics";
+import PortfolioPerformance from "./pages/PortfolioPerformance";
 
 const routes = [
   {
@@ -65,6 +67,14 @@ const routes = [
   {
     path: "/analytics",
     main: () => <PortfolioAnalytics />
+  },
+  {
+    path: "/analytics/esg",
+    main: () => <ESGAnalytics />
+  },
+  {
+    path: "/analytics/performance",
+    main: () => <PortfolioPerformance />
   },
   {
     path: "/newsfeed",

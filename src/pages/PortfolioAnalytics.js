@@ -18,8 +18,21 @@ import Navbar from "../components/navbar";
 import FilterBand from "../components/filterBand";
 
 import moment from "moment/moment";
+import { useNavigate } from "react-router-dom";
 
 function PortfolioAnalytics() {
+
+  const navigate = useNavigate();
+
+  const navigateToESGAnalytics = () => {
+    let path = `/analytics/esg`;
+    navigate(path);
+  }
+
+  const navigateToPortfolioPerformance = () => {
+    let path = `/analytics/performance`;
+    navigate(path);
+  }
   const categories = [
     { name: 'ALL' },
     { name: 'TECHNOLOGY' },
@@ -144,16 +157,21 @@ function PortfolioAnalytics() {
         <Flex m="4">
           <Flex p="4">
             <Button size="lg" color="white" bg={"#5BB0FF"}>
-              <Text size="xl">
-                Portfolio Performance
-              </Text>
+              <Button onClick={navigateToPortfolioPerformance} variant={"unstyled"}>
+                <Text size="xl">
+                  Portfolio Performance
+                </Text>
+              </Button>
             </Button>
           </Flex>
           <Flex p="4">
             <Button size="lg" color="white" bg={"#FFA05B"}>
-              <Text size="xl">
-                ESG Analytics
-              </Text>
+
+              <Button onClick={navigateToESGAnalytics} variant={"unstyled"}>
+                <Text size="xl">
+                  ESG Analytics
+                </Text>
+              </Button>
             </Button>
           </Flex>
         </Flex>
@@ -171,13 +189,14 @@ function PortfolioAnalytics() {
         <Flex m="4">
           <Flex flexDir={'column'} w="100%">
             <TableContainer
+              fontWeight={"bold"}
               border="1px"
               borderColor={'gray.400'}
               borderRadius="15"
               p="4"
               m="4"
             >
-              <Table variant="simple" size="md" colorScheme="gray">
+              <Table variant="unstyled" size="md">
                 <TableCaption color="white">Positions</TableCaption>
                 <Thead bg="#F0F0F0">
                   <Tr>

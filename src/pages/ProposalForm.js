@@ -59,7 +59,7 @@ function RadioCard(props) {
   );
 }
 
-export default function ProposalForm() {
+export default function ProposalForm(props) {
   const options = ['BUY', 'SELL'];
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -129,6 +129,7 @@ export default function ProposalForm() {
   };
 
   const group = getRootProps();
+
 
   return (
     <Flex minHeight={'100vh'} height={'fit-content'} width={'98vw'}>

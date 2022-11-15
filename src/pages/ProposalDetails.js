@@ -30,10 +30,10 @@ export default function ProposalDetails() {
       days: 30,
       text: "Irure excepteur enim exercitation. Lorem minim consequat sint commodo commodo enim. Laboris adipisicing sit non eu dolor reprehenderit qui non elit pariatur elit incididunt. Laborum sint ex eu ad qui elit incididunt nostrud mollit dolore. Ad mollit nostrud do veniam cupidatat nisi enim tempor ad ex aliqua velit sunt commodo.",
       links: [
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
       ],
       upvotes: 37,
       downvotes: 28,
@@ -46,10 +46,10 @@ export default function ProposalDetails() {
       days: 12,
       text: "Irure excepteur enim exercitation. Lorem minim consequat sint commodo commodo enim. Laboris adipisicing sit non eu dolor reprehenderit qui non elit pariatur elit incididunt. Laborum sint ex eu ad qui elit incididunt nostrud mollit dolore. Ad mollit nostrud do veniam cupidatat nisi enim tempor ad ex aliqua velit sunt commodo.",
       links: [
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
-        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com"},
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
+        { title: "Elon Musk agrees to buy Twitter at original offer price", url: "https://twitter.com" },
       ],
       upvotes: 12,
       downvotes: 54,
@@ -58,7 +58,7 @@ export default function ProposalDetails() {
   ];
 
   const proposal = proposals.find(
-    proposal => proposal.id === params.proposalId
+    proposal => String(proposal.id) === String(params.proposalId)
   );
 
   let navigate = useNavigate();
@@ -77,14 +77,13 @@ export default function ProposalDetails() {
             <Flex>
               <Text>Proposal &ndash; </Text>
               <Text
-                pl="1"
                 color={
                   proposal.action === 'SELL'
                     ? 'brand.400'
                     : 'green'
                 }
               >
-                {proposal.ticker}
+                {' ' + proposal.ticker}
                 | {proposal.days} days
               </Text>
             </Flex>
