@@ -96,7 +96,7 @@ function Dashboard() {
         <Flex m="4">
           <Navbar
             title="Dashboard"
-            subtitle="Welcome to your Ant Farm Dashboard. View the portfolio's analytics at a single glance."
+            subtitle="Welcome to your Ant Farm Dashboard."
             user={user}
           />
         </Flex>
@@ -120,7 +120,7 @@ function Dashboard() {
         <Flex m="4">
           <Flex flexDir={'column'}>
             <Text color="brand.400" fontWeight={'bold'} fontSize={'lg'}>
-              All Proposals
+              Active Proposals
             </Text>
             <Flex>
               <Flex>
@@ -136,10 +136,10 @@ function Dashboard() {
                     <Thead>
                       <Tr>
                         <Th fontSize="md">ACTION</Th>
-                        <Th fontSize="md">STOCK / PRICE</Th>
+                        <Th fontSize="md">STOCK</Th>
                         <Th fontSize="md">DATE</Th>
                         <Th fontSize="md">PROPOSALS (LAST MONTH)</Th>
-                        <Th fontSize="md">CASH FLOW</Th>
+                        <Th fontSize="md">CATEGORY</Th>
                       </Tr>
                     </Thead>
                     <Tbody>
@@ -161,12 +161,7 @@ function Dashboard() {
                             </Badge>
                           </Td>
                           <Td>
-                            <Text as="span">
-                              {proposal.companyName} &mdash;
-                              <Text as="span" color="gray.500">
-                                {proposal.stockPrice} per share
-                              </Text>
-                            </Text>
+                            <Text as="span">{proposal.companyName}</Text>
                           </Td>
                           <Td>{moment(proposal.timestamp).fromNow()}</Td>
                           <Td fontWeight={'bold'}>
@@ -179,15 +174,18 @@ function Dashboard() {
                             </Text>
                           </Td>
                           <Td>
-                            <Text
-                              fontWeight={'bold'}
-                              color={
-                                proposal.cashFlow.startsWith('-')
-                                  ? 'brand.400'
-                                  : 'green'
-                              }
-                            >
-                              {proposal.cashFlow}
+                            <Text fontWeight={'bold'}>
+                              <Badge
+                                fontSize={'md'}
+                                bg={'brown'}
+                                color="white"
+                                pl="2"
+                                pr="2"
+                              >
+                                {proposal.category
+                                  ? proposal.category
+                                  : 'SOCIAL'}
+                              </Badge>
                             </Text>
                           </Td>
                         </Tr>

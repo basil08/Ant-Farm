@@ -158,7 +158,7 @@ function PortfolioTransactionHistory() {
             p="4"
             mr="4"
           >
-            <Text fontWeight={'bold'}>CURRENT BALANCE</Text>
+            <Text fontWeight={'bold'}>NAV</Text>
             <Text
               fontSize={'2xl'}
               fontWeight={'bold'}

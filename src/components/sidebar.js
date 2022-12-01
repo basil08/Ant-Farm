@@ -35,14 +35,14 @@ const LinkItems = {
       toUrl: '/dashboard',
     },
     {
-      name: 'Bulletin Board',
-      icon: TextCloudIcon,
-      toUrl: '/bulletin',
-    },
-    {
       name: 'Newsfeed',
       icon: GlobeIcon,
       toUrl: '/newsfeed',
+    },
+    {
+      name: 'Research',
+      icon: TextCloudIcon,
+      toUrl: '/bulletin',
     },
     {
       name: 'Portfolio Analytics',
@@ -154,7 +154,7 @@ function Sidebar() {
           onClick={handleTickerForm}
         >
           <Flex p="2"></Flex>
-          Raise a proposal
+          Create a new Proposal
         </Button>
       </Flex>
 

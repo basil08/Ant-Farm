@@ -35,7 +35,7 @@ export default function FilterBand({
         <InputGroup m="auto">
           <InputLeftElement children={<SearchIcon color="gray.400" />} />
           <Input
-            placeholder="Search by company name"
+            placeholder="Search"
             borderRadius={30}
             value={searchText}
             onChange={e => handleSearchTextChange(e.target.value)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, Text, Select } from '@chakra-ui/react';
 
 export default function PortfolioSummaryCard({ user }) {
   return (
@@ -29,7 +29,17 @@ export default function PortfolioSummaryCard({ user }) {
         borderRadius="md"
         p="4"
       >
-        <Text fontWeight={'bold'}>PORTFOLIO RETURN</Text>
+        <Flex flexDir={'column'}>
+          <Text fontWeight={'bold'}>PORTFOLIO RETURN</Text>
+          <Flex justifyContent={"flex-end"}>
+            <Select size={'xs'}>
+              <option>A day</option>
+              <option>1 Week</option>
+              <option>1 Month</option>
+              <option>1 Year</option>
+            </Select>
+          </Flex>
+        </Flex>
         <Text
           fontSize={'2xl'}
           fontWeight={'bold'}

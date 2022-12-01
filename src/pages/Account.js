@@ -27,7 +27,7 @@ function Account() {
         <Flex m="4">
           <Navbar
             title="My Account"
-            subtitle="Make money the right way, and see how your favourite ESG indicators are performing."
+            subtitle="Track your progress while making money."
             user={user}
           />
         </Flex>
