@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Flex,
@@ -72,6 +72,7 @@ const LinkItems = {
 function Sidebar() {
   let navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedOption, setSelectedOption] = useState("");
 
   const navigateToProposalForm = ticker => {
     let path = `/bulletin/new?ticker=${ticker}`;
@@ -82,6 +83,10 @@ function Sidebar() {
     onOpen(!isOpen);
   };
 
+
+  const handleSelectOptionChange = (e) => {
+    setSelectedOption(e.target.value)
+  }
   // get these from some API
   const companies = [
     { ticker: 'GOOGL' },
@@ -178,7 +183,7 @@ function Sidebar() {
               SELECT COMPANY TICKER
             </Text>
             <FormControl>
-              <Select>
+              <Select onChange={handleSelectOptionChange}>
                 {companies.map((company, index) => (
                   <option key={index} value={company.ticker}>
                     {company.ticker}
@@ -189,7 +194,7 @@ function Sidebar() {
           </ModalBody>
 
           <ModalFooter>
-            <Button bg="#009E10" color="white" onClick={navigateToProposalForm}>
+            <Button bg="#009E10" color="white" onClick={() => navigateToProposalForm(selectedOption)}>
               RAISE PROPOSAL
             </Button>
           </ModalFooter>
