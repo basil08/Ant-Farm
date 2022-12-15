@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Flex,
-  Grid,
-  GridItem,
-  LinkOverlay,
-  LinkBox,
-} from '@chakra-ui/react';
+import { Flex, Grid, GridItem, LinkOverlay, LinkBox } from '@chakra-ui/react';
 
 import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
@@ -27,7 +21,7 @@ function Bulletin() {
   const companies = [
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -36,7 +30,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -45,7 +39,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -54,7 +48,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -63,7 +57,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -72,7 +66,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -81,7 +75,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -90,7 +84,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -99,7 +93,7 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
@@ -108,39 +102,12 @@ function Bulletin() {
     },
     {
       logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+      '/googlelogo.png',
       name: 'Alphabet Inc.',
       ticker: 'GOOGL',
       stockPrice: '99.87',
       currencySymbol: '$',
       changePercentage: '-1.74',
-    },
-    {
-      logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
-      name: 'Alphabet Inc.',
-      ticker: 'GOOGL',
-      stockPrice: '99.87',
-      currencySymbol: '$',
-      changePercentage: '-1.74',
-    },
-    {
-      logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
-      name: 'Alphabet Inc.',
-      ticker: 'GOOGL',
-      stockPrice: '99.87',
-      currencySymbol: '$',
-      changePercentage: '-1.74',
-    },
-    {
-      logoUrl:
-        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
-      name: 'Apple Inc.',
-      ticker: 'AAPL',
-      stockPrice: '101.87',
-      currencySymbol: '$',
-      changePercentage: '2.74',
     },
   ];
 
@@ -186,10 +153,9 @@ function Bulletin() {
         </Flex>
 
         <Flex m="4">
-          <Grid templateColumns={'repeat(4, 1fr)'} gap={6}>
+          <Grid templateColumns={'repeat(3, 1fr)'} gap={10}>
             {companies.map((company, index) => (
-              <LinkBox
-                as="article">
+              <LinkBox as="article">
                 <GridItem key={index} w="100%">
                   <LinkOverlay
                     href={`/bulletin/${company.ticker}`}
@@ -200,7 +166,6 @@ function Bulletin() {
             ))}
           </Grid>
         </Flex>
-      
       </Flex>
       <Outlet />
     </Flex>
