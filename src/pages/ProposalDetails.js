@@ -97,7 +97,7 @@ export default function ProposalDetails() {
   let navigate = useNavigate();
 
   const handleCreateNewProposal = ticker => {
-    let path = `/bulletin/${ticker}/new`;
+    let path = `/research/${ticker}/new`;
     navigate(path);
   };
 

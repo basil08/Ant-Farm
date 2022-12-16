@@ -1,6 +1,6 @@
 import {Text} from "@chakra-ui/react";
 import Login from "./pages/Login";
-import Bulletin from "./pages/Bulletin";
+import Research from "./pages/Research";
 import Dashboard from "./pages/Dashboard";
 import PortfolioAnalytics from "./pages/PortfolioAnalytics";
 import Newsfeed from "./pages/Newsfeed";
@@ -43,8 +43,8 @@ const routes = [
     main: () => <RulesAndRegulations />
   },
   {
-    path: "/bulletin",
-    main: () => <Bulletin />,
+    path: "/research",
+    main: () => <Research />,
     // children: () => (
     //   <Route
     //    path=":companyTicker"
@@ -53,15 +53,15 @@ const routes = [
     // )
   },
   {
-    path: "/bulletin/:companyTicker",
+    path: "/research/:companyTicker",
     main: () => <CompanyDetails />
   },
   {
-    path: "/bulletin/:companyTicker/:proposalId",
+    path: "/research/:companyTicker/:proposalId",
     main: () => <ProposalDetails />
   },
   {
-    path: "/bulletin/new",
+    path: "/research/new",
     main: () => <ProposalForm />
   },
   {

@@ -42,7 +42,7 @@ const LinkItems = {
     {
       name: 'Research',
       icon: TextCloudIcon,
-      toUrl: '/bulletin',
+      toUrl: '/research',
     },
     {
       name: 'Portfolio Analytics',
@@ -72,10 +72,10 @@ const LinkItems = {
 function Sidebar() {
   let navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
 
   const navigateToProposalForm = ticker => {
-    let path = `/bulletin/new?ticker=${ticker}`;
+    let path = `/research/new?ticker=${ticker}`;
     navigate(path);
   };
 
@@ -83,10 +83,9 @@ function Sidebar() {
     onOpen(!isOpen);
   };
 
-
-  const handleSelectOptionChange = (e) => {
-    setSelectedOption(e.target.value)
-  }
+  const handleSelectOptionChange = e => {
+    setSelectedOption(e.target.value);
+  };
   // get these from some API
   const companies = [
     { ticker: 'GOOGL' },
@@ -122,7 +121,11 @@ function Sidebar() {
         </Text>
         {LinkItems.investments.map(link => (
           <Flex w="100%">
-            <NavItem key={link.name} icon={link.icon} toUrl={link.toUrl}>
+            <NavItem
+              key={link.name}
+              icon={link.icon}
+              toUrl={link.toUrl}
+            >
               {link.name}
             </NavItem>
           </Flex>
@@ -194,7 +197,11 @@ function Sidebar() {
           </ModalBody>
 
           <ModalFooter>
-            <Button bg="#009E10" color="white" onClick={() => navigateToProposalForm(selectedOption)}>
+            <Button
+              bg="#009E10"
+              color="white"
+              onClick={() => navigateToProposalForm(selectedOption)}
+            >
               RAISE PROPOSAL
             </Button>
           </ModalFooter>

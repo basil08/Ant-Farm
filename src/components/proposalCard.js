@@ -63,7 +63,7 @@ export default function ProposalCard({ proposal }) {
       <Flex flexDir={'column'}>
         <Flex>
           <LinkBox as="span">
-            <LinkOverlay href={`/bulletin/${proposal.ticker}/${proposal.id}`}>
+            <LinkOverlay href={`/research/${proposal.ticker}/${proposal.id}`}>
               <Text as="span" fontWeight={'bold'} fontSize="lg">
                 Action:
                 <Text

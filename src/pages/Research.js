@@ -7,7 +7,7 @@ import FilterBand from '../components/filterBand';
 import CompanyCard from '../components/companyCard';
 import { Outlet } from 'react-router-dom';
 
-function Bulletin() {
+function Research() {
   const categories = [
     { name: 'ALL' },
     { name: 'TECHNOLOGY' },
@@ -119,7 +119,7 @@ function Bulletin() {
   // let navigate = useNavigate();
 
   // const navigateToCompanyDetailPage = ticker => {
-  //   let path = `/bulletin/${ticker}`;
+    // let path = `/research/${ticker}`;
   //   navigate(path);
   // };
 
@@ -133,7 +133,7 @@ function Bulletin() {
       <Flex flexDir="column" height={'fit-content'} width="95%">
         <Flex m="4">
           <Navbar
-            title="Bulletin Board"
+            title="Research"
             subtitle="View active discussions on and proposals for companies that we're currently watching."
             user={{
               name: 'Parth Sharma',
@@ -158,7 +158,7 @@ function Bulletin() {
               <LinkBox as="article">
                 <GridItem key={index} w="100%">
                   <LinkOverlay
-                    href={`/bulletin/${company.ticker}`}
+                    href={`/research/${company.ticker}`}
                   ></LinkOverlay>
                   <CompanyCard company={company} />
                 </GridItem>
@@ -172,4 +172,4 @@ function Bulletin() {
   );
 }
 
-export default Bulletin;
+export default Research;

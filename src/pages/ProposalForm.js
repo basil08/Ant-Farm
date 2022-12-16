@@ -114,7 +114,7 @@ export default function ProposalForm(props) {
   let navigate = useNavigate();
 
   const handleCancelForm = () => {
-    let path = `/bulletin`;
+    let path = `/research`;
     navigate(path);
   };
 

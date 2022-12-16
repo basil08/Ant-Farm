@@ -57,7 +57,7 @@ export default function CompanyDetails() {
   let navigate = useNavigate();
 
   const handleCreateNewProposal = ticker => {
-    let path = `/bulletin/new`;
+    let path = `/research/new`;
     navigate(path);
   };
 
